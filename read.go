@@ -81,13 +81,13 @@ var DebugOn = false
 
 // A Reader is a single PDF file open for reading.
 type Reader struct {
-	f          io.ReaderAt
-	end        int64
-	xref       []xref
-	trailer    dict
-	trailerptr objptr
-	key        []byte
-	useAES     bool
+	F          io.ReaderAt
+	End        int64
+	Xref       []xref
+	Trailer    dict
+	Trailerptr objptr
+	Key        []byte
+	UseAES     bool
 }
 
 type xref struct {
