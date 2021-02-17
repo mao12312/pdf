@@ -192,8 +192,8 @@ func NewReaderEncrypted(f io.ReaderAt, size int64, pw func() string) (*Reader, e
 	return nil, err
 }
 
-// ReadFile : Cast to *Reader
-func ReadFile(file multipart.File)(*Reader,error){
+// ReadFileCastReader : Cast to *Reader
+func ReadFileCastReader(file multipart.File) (*Reader, error) {
 	data, err := ioutil.ReadAll(file)
 	if err != nil {
 		return err
