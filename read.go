@@ -71,6 +71,7 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
+	"mime/multipart"
 	"os"
 	"sort"
 	"strconv"
@@ -189,6 +190,15 @@ func NewReaderEncrypted(f io.ReaderAt, size int64, pw func() string) (*Reader, e
 		}
 	}
 	return nil, err
+}
+
+// ReadFile : Cast to *Reader
+func ReadFile(file multipart.File)(*Reader,error){
+	data, err := ioutil.ReadAll(file)
+	if err != nil {
+		return err
+	}
+	return data
 }
 
 // Trailer returns the file's Trailer value.
